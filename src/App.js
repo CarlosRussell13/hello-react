@@ -10,9 +10,9 @@ const Stats= {
 };
 
 const Players = [
-  {name: 'JD Martinez', theme:'react', isAvailable: true},
-  {name: 'Miguel Cabrera', theme:'react', isAvailable: true},
-  {name: 'Aaron Judge', theme:'react', isAvailable: false}
+  {ID: 1, name: 'JD Martinez', theme:'react', isAvailable: true},
+  {ID: 2, name: 'Miguel Cabrera', theme:'react', isAvailable: true},
+  {ID: 3, name: 'Aaron Judge', theme:'react', isAvailable: false}
 ]
 
 function Statspot(){
@@ -25,14 +25,14 @@ function Statspot(){
   );
 }
 
-function Playerdata(){
-const listPlayers = Players.map(Play =>
-  <li key={Players.name} style={{color: Players.isAvailable ? 'black':'white'}}>
-    {Players.title}
+function Playersdata(){
+const listPlay = Players.map(Play =>
+  <li key={Players.id} style={{color: Players.isAvailable ? 'black':'white'}}>
+    {Players.name}
   </li>
 );
 return(
-  <ul>{listPlayers}</ul>
+  <ul>{listPlay}</ul>
 );
 }
 
@@ -62,7 +62,7 @@ function App() {
           Have a good day.
         </a>
         <Statspot/>
-        <Playerdata/>
+        <Playersdata/>
         <BOOM/>
       </header>
     </div>
