@@ -53,8 +53,8 @@ function App() {
         >
           Have a good day.
         </a>
-        <statspot/>
-        <playerdata/>
+        <Statspot/>
+        <Playerdata/>
       </header>
     </div>
   );
