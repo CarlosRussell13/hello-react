@@ -1,40 +1,48 @@
-import logo from './baseball.webp';
+import logo from './baseball.png';
 import './App.css';
-
-const Players = [
-  {id: 1, title: 'JD Martinez', isAvailable: true},
-  {id: 2, title: 'Miguel Cabrera', isAvailable: true},
-  {id: 3, title: 'Aaron Judge', isAvailable: true}
-]
 
 const Stats= {
   PlayerName:'Miguel Cabrera',
   PlayerNumber:'24',
   HR: '511',
-  image:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mlb.com%2Fplayer%2Fmiguel-cabrera-408234&psig=AOvVaw00qFhy-GUWMnEuzsVPjcyq&ust=1712074182608000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNjkmr2zoYUDFQAAAAAdAAAAABAE',
-  width:'130',
+  image:'https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/408234/headshot/67/current',
   height:'185'
 };
+
+const Players = [
+  {name: 'JD Martinez', theme:'react', isAvailable: true},
+  {name: 'Miguel Cabrera', theme:'react', isAvailable: true},
+  {name: 'Aaron Judge', theme:'react', isAvailable: false}
+]
 
 function Statspot(){
   return(
     <div>
       <h2>{Stats.PlayerName}</h2>
-      <p>Number {Stats.PlayerNumber}</p>
-      <img className='StatImage' src={Stats.image} alt={Stats.title + ' cover'} style={{width: Stats.width, height: Stats.height}}/>
+      <p>{Stats.PlayerNumber}</p>
+      <img className='StatImage' src={Stats.image} alt={Stats.name + ' cover'} style={{width: Stats.width, height: Stats.height}}/>
     </div>
   );
 }
 
 function Playerdata(){
-const listPlay = Players.map(Play =>
-  <li key={Players.id} style={{color: Players.isAvailable ? 'white':'black'}}>
+const listPlayers = Players.map(Play =>
+  <li key={Players.name} style={{color: Players.isAvailable ? 'black':'white'}}>
     {Players.title}
   </li>
 );
 return(
-  <ul>{listPlay}</ul>
+  <ul>{listPlayers}</ul>
 );
+}
+
+function BOOM (){
+  return(
+    <>
+      <h3>Click me for a HOMERUN!</h3>
+      <button>BOOM</button>
+    </>
+  );
 }
 
 function App() {
@@ -55,6 +63,7 @@ function App() {
         </a>
         <Statspot/>
         <Playerdata/>
+        <BOOM/>
       </header>
     </div>
   );
