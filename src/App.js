@@ -19,17 +19,17 @@ const Stats= {
 function Statspot(){
   return(
     <div>
-      <h2>{stats.PlayerName}({book.published})</h2>
-      <p>Number {stats.PlayerNumber}</p>
-      <img className='StatImage' src={stats.image} alt={stats.title + ' cover'} style={{width: stats.width, height: stats.height}}/>
+      <h2>{Stats.PlayerName}</h2>
+      <p>Number {Stats.PlayerNumber}</p>
+      <img className='StatImage' src={Stats.image} alt={Stats.title + ' cover'} style={{width: Stats.width, height: Stats.height}}/>
     </div>
   );
 }
 
 function Playerdata(){
 const listPlay = Players.map(Play =>
-  <li key={Play.id} style={{color: Play.isAvailable ? 'white':'black'}}>
-    {play.title}
+  <li key={Players.id} style={{color: Players.isAvailable ? 'white':'black'}}>
+    {Players.title}
   </li>
 );
 return(
@@ -61,3 +61,4 @@ function App() {
 }
 
 export default App;
+
